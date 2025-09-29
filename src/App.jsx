@@ -45,13 +45,21 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Aqui você pode implementar a lógica de envio do formulário
+    // Store form data for potential use by Leadster
     console.log('Dados do formulário:', formData)
     
-    // Redirecionar para WhatsApp
-    const whatsappMessage = `Olá Dr. Enrico! Meu nome é ${formData.nome} ${formData.sobrenome}. ${formData.mensagem || 'Gostaria de conversar sobre meus direitos trabalhistas.'}`
-    const whatsappUrl = `https://wa.me/5551981218676?text=${encodeURIComponent(whatsappMessage)}`
-    window.open(whatsappUrl, '_blank')
+    // Store form data in sessionStorage for Leadster to potentially access
+    sessionStorage.setItem('contactFormData', JSON.stringify(formData))
+    
+    // Trigger Leadster chat instead of direct WhatsApp
+    // The Leadster script should handle the chat opening
+    if (window.neuroleadId) {
+      // Display a message to indicate the chat will open
+      alert('Obrigado! O chat será aberto para você falar diretamente com o Dr. Enrico.')
+    } else {
+      // Fallback message if Leadster hasn't loaded yet
+      alert('Obrigado pelo contato! Por favor, use o chat no canto da tela para falar com o Dr. Enrico.')
+    }
   }
 
   return (
@@ -74,7 +82,7 @@ function App() {
             </nav>
             <Button 
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
-              onClick={() => window.open('https://wa.me/5551981218676', '_blank')}
+              onClick={() => document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })}
             >
               <MessageCircle className="h-4 w-4 mr-2" />
               Conversar!
@@ -117,10 +125,10 @@ function App() {
                   variant="outline" 
                   size="lg"
                   className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
-                  onClick={() => window.open('https://wa.me/5551981218676', '_blank')}
+                  onClick={() => document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })}
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  WhatsApp Agora
+                  Iniciar Conversa
                 </Button>
               </div>
 
@@ -341,10 +349,10 @@ function App() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
-              onClick={() => window.open('https://wa.me/5551981218676', '_blank')}
+              onClick={() => document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })}
             >
               <MessageCircle className="h-5 w-5 mr-2" />
-              WhatsApp Agora
+              Iniciar Conversa
             </Button>
           </div>
         </div>
@@ -359,7 +367,7 @@ function App() {
             </h2>
             <p className="text-xl text-gray-600 mb-2">Não espere mais!</p>
             <p className="text-lg text-gray-600">
-              Preencha o formulário para conversar agora com o Dr. Enrico Rotter via WhatsApp 
+              Preencha o formulário para iniciar uma conversa com o Dr. Enrico Rotter 
               e tire todas as suas dúvidas instantaneamente.
             </p>
           </div>
@@ -419,7 +427,7 @@ function App() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="telefone" className="text-sm font-medium text-gray-700">Número de telefone do WhatsApp *</Label>
+                  <Label htmlFor="telefone" className="text-sm font-medium text-gray-700">Número de telefone *</Label>
                   <Input
                     id="telefone"
                     name="telefone"
@@ -486,7 +494,7 @@ function App() {
                   disabled={!formData.consentimento}
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  Conversar no WhatsApp Agora
+                  Iniciar Conversa Agora
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </form>
