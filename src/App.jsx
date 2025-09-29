@@ -43,6 +43,126 @@ function App() {
     }))
   }
 
+  // Function to open Leadster chatbot as full-page popup
+  const openLeadsterChat = () => {
+    // Try different methods to open Leadster chat
+    if (typeof window !== 'undefined') {
+      // Method 1: Try common Leadster global methods
+      if (window.neuroleadOpen) {
+        window.neuroleadOpen()
+        return
+      }
+      
+      if (window.neurolead && typeof window.neurolead.open === 'function') {
+        window.neurolead.open()
+        return
+      }
+      
+      if (window.neurolead && typeof window.neurolead.show === 'function') {
+        window.neurolead.show()
+        return
+      }
+
+      // Method 2: Try to trigger chat via events
+      if (window.neuroleadId) {
+        // Try to dispatch custom event that Leadster might listen to
+        const event = new CustomEvent('neurolead-open', {
+          detail: { source: 'cta-button' }
+        })
+        window.dispatchEvent(event)
+        
+        // Try to trigger via postMessage
+        window.postMessage({ type: 'neurolead-open', source: 'cta-button' }, '*')
+        
+        // Look for Leadster iframe and try to interact with it
+        const leadsterIframe = document.querySelector('iframe[src*="leadster"]') || 
+                              document.querySelector('iframe[src*="neurolead"]')
+        
+        if (leadsterIframe) {
+          // Make the iframe full screen
+          leadsterIframe.style.position = 'fixed'
+          leadsterIframe.style.top = '0'
+          leadsterIframe.style.left = '0'
+          leadsterIframe.style.width = '100vw'
+          leadsterIframe.style.height = '100vh'
+          leadsterIframe.style.zIndex = '999999'
+          leadsterIframe.style.border = 'none'
+          
+          // Try to send message to iframe
+          leadsterIframe.contentWindow?.postMessage({ type: 'open-chat' }, '*')
+        }
+        
+        return
+      }
+
+      // Method 3: Create a full-page overlay to simulate chat opening
+      // This is a fallback if Leadster isn't properly loaded
+      const overlay = document.createElement('div')
+      overlay.id = 'leadster-fullpage-overlay'
+      overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+      `
+      
+      const content = document.createElement('div')
+      content.style.cssText = `
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      `
+      
+      content.innerHTML = `
+        <h2 style="color: #1e40af; margin-bottom: 1rem;">Entre em contato conosco!</h2>
+        <p style="margin-bottom: 1.5rem; color: #374151;">
+          O chat do Dr. Enrico Rotter está sendo carregado... 
+          Enquanto isso, você pode entrar em contato diretamente:
+        </p>
+        <div style="margin-bottom: 1rem;">
+          <a href="https://wa.me/5551981218676" target="_blank" 
+             style="display: inline-block; background: #25d366; color: white; padding: 12px 24px; 
+                    text-decoration: none; border-radius: 8px; margin: 8px; font-weight: bold;">
+            📱 WhatsApp: (51) 98121-8676
+          </a>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <a href="mailto:contato@enricorotter.com.br" 
+             style="display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; 
+                    text-decoration: none; border-radius: 8px; margin: 8px; font-weight: bold;">
+            📧 Email: contato@enricorotter.com.br
+          </a>
+        </div>
+        <button onclick="document.getElementById('leadster-fullpage-overlay').remove()" 
+                style="background: #6b7280; color: white; border: none; padding: 8px 16px; 
+                       border-radius: 6px; cursor: pointer; font-size: 14px;">
+          Fechar
+        </button>
+      `
+      
+      overlay.appendChild(content)
+      document.body.appendChild(overlay)
+      
+      // Remove overlay when clicking outside
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.remove()
+        }
+      })
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     // Store form data for potential use by Leadster
@@ -51,15 +171,8 @@ function App() {
     // Store form data in sessionStorage for Leadster to potentially access
     sessionStorage.setItem('contactFormData', JSON.stringify(formData))
     
-    // Trigger Leadster chat instead of direct WhatsApp
-    // The Leadster script should handle the chat opening
-    if (window.neuroleadId) {
-      // Display a message to indicate the chat will open
-      alert('Obrigado! O chat será aberto para você falar diretamente com o Dr. Enrico.')
-    } else {
-      // Fallback message if Leadster hasn't loaded yet
-      alert('Obrigado pelo contato! Por favor, use o chat no canto da tela para falar com o Dr. Enrico.')
-    }
+    // Open Leadster chat
+    openLeadsterChat()
   }
 
   return (
@@ -82,7 +195,7 @@ function App() {
             </nav>
             <Button 
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
-              onClick={() => document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })}
+              onClick={openLeadsterChat}
             >
               <MessageCircle className="h-4 w-4 mr-2" />
               Conversar!
@@ -116,7 +229,7 @@ function App() {
                 <Button 
                   size="lg" 
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-                  onClick={() => document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={openLeadsterChat}
                 >
                   <Calendar className="h-5 w-5 mr-2" />
                   Agendar Consulta Gratuita
@@ -125,7 +238,7 @@ function App() {
                   variant="outline" 
                   size="lg"
                   className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
-                  onClick={() => document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={openLeadsterChat}
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
                   Iniciar Conversa
@@ -340,7 +453,7 @@ function App() {
             <Button 
               size="lg" 
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
-              onClick={() => document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })}
+              onClick={openLeadsterChat}
             >
               <Calendar className="h-5 w-5 mr-2" />
               Agendar Consulta Gratuita
@@ -349,7 +462,7 @@ function App() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
-              onClick={() => document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })}
+              onClick={openLeadsterChat}
             >
               <MessageCircle className="h-5 w-5 mr-2" />
               Iniciar Conversa
