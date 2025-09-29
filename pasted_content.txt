@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advogado Trabalhista Enrico Rotter - Porto Alegre</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #004a99;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    header h2 {
+      margin-top: 5px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    }
+    h2, h3 {
+      color: #004a99;
+      margin-bottom: 10px;
+    }
+    h3 {
+      margin-top: 25px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .btn-contact {
+      display: inline-block;
+      background-color: #007acc;
+      color: white;
+      padding: 14px 30px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+    footer {
+      margin: 30px auto 20px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
+    @media (max-width: 700px) {
+      main {
+        margin: 15px;
+        padding: 15px;
+      }
+      header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Você Merece Respeito no Trabalho</h1>
+  <h2>Advogado Trabalhista Enrico Rotter - Porto Alegre, RS</h2>
+</header>
+
+<main>
+  <section>
+    <p>Você se sente desvalorizado e sem voz no seu ambiente de trabalho?</p>
+    <p>A sensação de estar preso em uma rotina desmotivadora e não reconhecida afeta não só a sua carreira, mas também sua autoestima e bem-estar.</p>
+    <p>Lidando com a instabilidade do mercado, contratos injustos e medo constante da perda do emprego, você precisa de segurança e clareza sobre seus direitos.</p>
+    <p>É injusto que trabalhadores sejam desvalorizados e vivam sob constante incerteza. Todo trabalhador tem direito a um ambiente de trabalho justo, seguro e que promova o crescimento pessoal e profissional.</p>
+  </section>
+
+  <section>
+    <h2>Seu Direito Garantido com o Advogado Trabalhista Enrico Rotter</h2>
+    <p>Com anos de experiência defendendo os direitos dos trabalhadores em todo Brasil, Enrico Rotter é o advogado trabalhista que entende profundamente os desafios que você enfrenta.</p>
+    <p>Ele está aqui para ajudá-lo a navegar pelas complexidades do direito trabalhista, garantindo que seus direitos sejam protegidos e que você receba a valorização que merece.</p>
+  </section>
+
+  <section>
+    <h3>Como funciona</h3>
+    <ul>
+      <li><strong>Consulta Inicial:</strong> Agende uma consulta sem compromisso para discutir seu caso</li>
+      <li><strong>Análise Detalhada:</strong> Receba uma avaliação completa da sua situação e entenda seus direitos.</li>
+      <li><strong>Plano de Ação:</strong> Desenvolvemos uma estratégia personalizada para abordar seus problemas específicos e lutar pelos seus direitos.</li>
+      <li>Enrico Rotter estará ao seu lado em cada etapa, oferecendo o suporte e a representação necessários para alcançar o melhor resultado possível.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Pronto para fazer a mudança?</h3>
+    <p>Entre em contato hoje mesmo e comece a transformar sua realidade no trabalho.</p>
+    <p>Defenda seus direitos com um advogado trabalhista experiente e comprometido.</p>
+  </section>
+
+  <section>
+    <h3>Tem dúvidas sobre seus direitos trabalhistas?</h3>
+    <p>Não espere mais! Preencha o formulário para conversar agora com o Dr. Enrico Rotter via WhatsApp e tire todas as suas dúvidas instantaneamente.</p>
+    <p>Prefere agendar uma consulta? Preencha o formulário e marque o melhor horário para você. Sua jornada em busca de seus direitos começa aqui!</p>
+  </section>
+
+  <a href="https://wa.me/555181218676" target="_blank" class="btn-contact" rel="noopener">
+    Converse Agora no WhatsApp
+  </a>
+
+</main>
+
+<footer>
+  &copy; 2025 Enrico Rotter - OAB RS 123456
+</footer>
+
+</body>
+</html>
