@@ -22,7 +22,7 @@ import {
   Award,
   Clock
 } from 'lucide-react'
-import './App.css'
+import './index.css'
 
 function App() {
   const [formData, setFormData] = useState({
