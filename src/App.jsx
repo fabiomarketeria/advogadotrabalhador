@@ -211,18 +211,26 @@ function App() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-blue-100 text-blue-800 px-4 py-2 text-sm font-medium">
-                  ⚖️ Direitos Trabalhistas
+                  ⚖️ Dr. Enrico Rotter - OAB/RS 97520
                 </Badge>
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Você Merece{' '}
+                  Foi Demitido?{' '}
                   <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                    Respeito
+                    Seus Direitos
                   </span>{' '}
-                  no Trabalho
+                  Não Foram Respeitados
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Descubra como podemos ajudá-lo a garantir seus direitos e conquistar a valorização que você merece.
+                <p className="text-xl text-gray-600 leading-relaxed mb-4">
+                  <strong>Advogado trabalhista com +469 avaliações 5 estrelas no Google.</strong> 
+                  Recupere o que é seu por direito com atendimento humanizado, sem juridiquês e total transparência.
                 </p>
+                <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+                  <p className="text-lg text-gray-700">
+                    ✓ Primeira consulta GRATUITA e sem compromisso<br/>
+                    ✓ Especialista em acordos rápidos<br/>
+                    ✓ Honorários transparentes desde o início
+                  </p>
+                </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -245,14 +253,21 @@ function App() {
                 </Button>
               </div>
 
-              <div className="flex items-center space-x-6 pt-4">
+              <div className="flex flex-col sm:flex-row items-start gap-6 pt-4">
                 <div className="flex items-center space-x-2">
-                  <div className="flex -space-x-2">
+                  <div className="flex -space-x-1">
                     {[1,2,3,4,5].map(i => (
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-600">+500 casos resolvidos</span>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">5,0 no Google</p>
+                    <p className="text-xs text-gray-600">+469 avaliações reais</p>
+                  </div>
+                </div>
+                <div className="border-l border-gray-300 pl-6 hidden sm:block">
+                  <p className="text-sm font-semibold text-gray-900">+500 casos</p>
+                  <p className="text-xs text-gray-600">resolvidos com sucesso</p>
                 </div>
               </div>
             </div>
@@ -293,9 +308,12 @@ function App() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto max-w-4xl px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Você se sente desvalorizado e sem voz no seu ambiente de trabalho?
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Reconhece Alguma Dessas Situações?
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Você não está sozinho. Milhares de trabalhadores enfrentam os mesmos problemas todos os dias.
+            </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -303,12 +321,14 @@ function App() {
               <CardHeader>
                 <CardTitle className="text-red-600 flex items-center">
                   <Clock className="h-5 w-5 mr-2" />
-                  Rotina Desmotivadora
+                  Demitido Sem Justa Causa
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  A sensação de estar preso em uma rotina não reconhecida afeta sua carreira, autoestima e bem-estar.
+                  • Não recebeu todas as verbas rescisórias<br/>
+                  • FGTS não foi liberado corretamente<br/>
+                  • Aviso prévio não foi pago
                 </p>
               </CardContent>
             </Card>
@@ -317,12 +337,14 @@ function App() {
               <CardHeader>
                 <CardTitle className="text-orange-600 flex items-center">
                   <Shield className="h-5 w-5 mr-2" />
-                  Instabilidade
+                  Horas Extras Não Pagas
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Lidando com contratos injustos e medo constante da perda do emprego, você precisa de segurança.
+                  • Trabalha além do horário sem receber<br/>
+                  • Empresa não registra banco de horas<br/>
+                  • Plantões e finais de semana não pagos
                 </p>
               </CardContent>
             </Card>
@@ -331,12 +353,14 @@ function App() {
               <CardHeader>
                 <CardTitle className="text-blue-600 flex items-center">
                   <Users className="h-5 w-5 mr-2" />
-                  Falta de Direitos
+                  Assédio Moral
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Todo trabalhador tem direito a um ambiente justo, seguro e que promova o crescimento profissional.
+                  • Pressão psicológica constante<br/>
+                  • Humilhações e tratamento desigual<br/>
+                  • Ambiente de trabalho tóxico
                 </p>
               </CardContent>
             </Card>
@@ -348,15 +372,15 @@ function App() {
       <section className="py-20 bg-white">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-800 px-4 py-2 text-sm font-medium mb-4">
-              Seu Direito Garantido
+            <Badge className="bg-green-100 text-green-800 px-4 py-2 text-sm font-medium mb-4">
+              A Solução Está Aqui
             </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Advogado Trabalhista Enrico Rotter
+              Dr. Enrico Rotter: Seu Advogado Trabalhista
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Com anos de experiência defendendo os direitos dos trabalhadores em todo Brasil, 
-              Enrico Rotter é o advogado trabalhista que entende profundamente os desafios que você enfrenta.
+              <strong>OAB/RS 97520</strong> • Mais de 10 anos defendendo trabalhadores em Porto Alegre.<br/>
+              Atendimento humanizado, linguagem clara e resultados que transformam vidas.
             </p>
           </div>
 
@@ -440,14 +464,134 @@ function App() {
         </div>
       </section>
 
+      {/* Transformation Section */}
+      <section className="py-20 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              O Que Você Vai Conquistar
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Veja como sua vida pode mudar quando seus direitos são respeitados e defendidos adequadamente
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Dinheiro no Bolso</h3>
+              <p className="text-gray-600">Receba todas as verbas que tem direito: FGTS, multa, férias, 13º</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Segurança Jurídica</h3>
+              <p className="text-gray-600">Tenha certeza de que está fazendo tudo certo, sem riscos</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Rapidez</h3>
+              <p className="text-gray-600">Acordos ágeis, sem prolongar seu sofrimento desnecessariamente</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-orange-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Paz de Espírito</h3>
+              <p className="text-gray-600">Durma tranquilo sabendo que um especialista cuida do seu caso</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof / Testimonials Preview */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              O Que Falam Nossos Clientes
+            </h2>
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="flex -space-x-1">
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <span className="text-lg font-semibold text-gray-900">5,0 estrelas no Google</span>
+            </div>
+            <p className="text-gray-600">Mais de 469 avaliações reais de clientes satisfeitos</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex -space-x-1">
+                    {[1,2,3,4,5].map(i => (
+                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">"Dr. Enrico me ajudou a recuperar mais de R$ 15.000 em verbas que a empresa não tinha pagado. Atendimento excelente e muito transparente."</p>
+                <p className="font-semibold text-gray-900">Maria S. - Auxiliar Administrativa</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex -space-x-1">
+                    {[1,2,3,4,5].map(i => (
+                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">"Conseguiu resolver meu caso em apenas 3 meses. Linguagem clara, sem juridiquês. Recomendo para qualquer trabalhador."</p>
+                <p className="font-semibold text-gray-900">João P. - Motorista</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex -space-x-1">
+                    {[1,2,3,4,5].map(i => (
+                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">"Profissional íntegro e competente. Me orientou corretamente desde o primeiro contato. Resultado acima do esperado."</p>
+                <p className="font-semibold text-gray-900">Ana L. - Enfermeira</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="container mx-auto max-w-4xl px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Pronto para fazer a mudança?</h2>
+          <h2 className="text-4xl font-bold mb-6">Não Deixe Seus Direitos Para Depois</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Entre em contato hoje mesmo e comece a transformar sua realidade no trabalho. 
-            Defenda seus direitos com um advogado trabalhista experiente e comprometido.
+            Cada dia que passa é dinheiro que você pode estar perdendo. 
+            Entre em contato AGORA e defenda o que é seu por direito.
           </p>
+          
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
+            <p className="text-lg">
+              ✓ Consulta gratuita e sem compromisso<br/>
+              ✓ Atendimento em até 24 horas<br/>
+              ✓ Total sigilo e confidencialidade
+            </p>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -471,148 +615,277 @@ function App() {
         </div>
       </section>
 
+      {/* About Dr. Enrico Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="bg-blue-100 text-blue-800 px-4 py-2 text-sm font-medium mb-4">
+                Sobre o Advogado
+              </Badge>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Dr. Enrico Dal Fiume Rotter
+              </h2>
+              <p className="text-xl text-gray-600 mb-6">
+                <strong>OAB/RS 97520</strong> • Especialista em Direito do Trabalho
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <Award className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-600">
+                    <strong>Mais de 10 anos</strong> defendendo exclusivamente direitos trabalhistas em Porto Alegre
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Users className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-600">
+                    <strong>+500 casos resolvidos</strong> com foco em acordos ágeis e justos
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-600">
+                    <strong>5,0 estrelas no Google</strong> com mais de 469 avaliações reais de clientes
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Shield className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-600">
+                    <strong>Atendimento humanizado:</strong> explicações claras, sem juridiquês, com total transparência
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+                <p className="text-gray-700">
+                  <em>"Minha missão é simples: garantir que cada trabalhador receba exatamente o que tem direito, 
+                  de forma rápida e transparente. Você não está sozinho nessa luta."</em>
+                </p>
+                <p className="text-blue-600 font-semibold mt-2">- Dr. Enrico Rotter</p>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-8">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Scale className="h-12 w-12 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">Diferenciais</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <span className="text-gray-700">Primeira consulta sempre gratuita</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <span className="text-gray-700">Honorários transparentes desde o início</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <span className="text-gray-700">Atendimento rápido em até 24h</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <span className="text-gray-700">Foco em acordos ágeis</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <span className="text-gray-700">Total sigilo e confidencialidade</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form Section */}
       <section id="contato" className="py-20 bg-gray-50">
         <div className="container mx-auto max-w-4xl px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Tem dúvidas sobre seus direitos trabalhistas?
+              Qual é Sua Situação?
             </h2>
-            <p className="text-xl text-gray-600 mb-2">Não espere mais!</p>
+            <p className="text-xl text-gray-600 mb-2">Escolha sua situação e vamos te ajudar agora mesmo!</p>
             <p className="text-lg text-gray-600">
-              Preencha o formulário para iniciar uma conversa com o Dr. Enrico Rotter 
-              e tire todas as suas dúvidas instantaneamente.
+              Atendimento rápido pelo WhatsApp ou agende uma consulta gratuita
             </p>
           </div>
 
-          <Card className="shadow-xl border-0">
-            <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-lg">
-              <CardTitle className="text-2xl text-center">
-                Converse diretamente com o Advogado Trabalhista Enrico Rotter
-              </CardTitle>
-              <CardDescription className="text-blue-100 text-center text-lg">
-                Preencha o formulário para iniciar
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="nome" className="text-sm font-medium text-gray-700">Nome *</Label>
-                    <Input
-                      id="nome"
-                      name="nome"
-                      type="text"
-                      required
-                      value={formData.nome}
-                      onChange={handleInputChange}
-                      className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                      placeholder="Seu nome"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="sobrenome" className="text-sm font-medium text-gray-700">Sobrenome *</Label>
-                    <Input
-                      id="sobrenome"
-                      name="sobrenome"
-                      type="text"
-                      required
-                      value={formData.sobrenome}
-                      onChange={handleInputChange}
-                      className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                      placeholder="Seu sobrenome"
-                    />
-                  </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="border-2 border-red-200 hover:border-red-500 transition-colors cursor-pointer" 
+                  onClick={() => window.open('https://wa.me/5551981218676?text=Olá! Fui demitido recentemente e gostaria de saber sobre meus direitos e verbas rescisórias.', '_blank')}>
+              <CardContent className="p-6 text-center">
+                <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Briefcase className="h-8 w-8 text-red-600" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Fui Demitido</h3>
+                <p className="text-gray-600 mb-4">Problemas com verbas rescisórias, FGTS, aviso prévio</p>
+                <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+                  Conversar Agora
+                </Button>
+              </CardContent>
+            </Card>
 
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-medium text-gray-700">E-mail *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="seu@email.com"
-                  />
+            <Card className="border-2 border-orange-200 hover:border-orange-500 transition-colors cursor-pointer"
+                  onClick={() => window.open('https://wa.me/5551981218676?text=Olá! Tenho dúvidas sobre horas extras, banco de horas e outros direitos trabalhistas.', '_blank')}>
+              <CardContent className="p-6 text-center">
+                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-orange-600" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Horas Extras</h3>
+                <p className="text-gray-600 mb-4">Trabalho além do horário, banco de horas, plantões</p>
+                <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
+                  Conversar Agora
+                </Button>
+              </CardContent>
+            </Card>
 
-                <div className="space-y-2">
-                  <Label htmlFor="telefone" className="text-sm font-medium text-gray-700">Número de telefone *</Label>
-                  <Input
-                    id="telefone"
-                    name="telefone"
-                    type="tel"
-                    required
-                    value={formData.telefone}
-                    onChange={handleInputChange}
-                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="(51) 99999-9999"
-                  />
+            <Card className="border-2 border-blue-200 hover:border-blue-500 transition-colors cursor-pointer"
+                  onClick={() => window.open('https://wa.me/5551981218676?text=Olá! Tenho algumas dúvidas gerais sobre direitos trabalhistas e gostaria de orientação.', '_blank')}>
+              <CardContent className="p-6 text-center">
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-blue-600" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Outras Dúvidas</h3>
+                <p className="text-gray-600 mb-4">Assédio moral, acidentes, aposentadoria</p>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  Conversar Agora
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="mensagem" className="text-sm font-medium text-gray-700">Mensagem</Label>
-                  <Textarea
-                    id="mensagem"
-                    name="mensagem"
-                    rows={4}
-                    value={formData.mensagem}
-                    onChange={handleInputChange}
-                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="Descreva brevemente sua situação ou dúvida..."
-                  />
-                </div>
-
-                <div className="space-y-4 p-4 bg-gray-50 rounded-lg">
-                  <div className="flex items-start space-x-3">
-                    <Checkbox
-                      id="marketing"
-                      name="marketing"
-                      checked={formData.marketing}
-                      onCheckedChange={(checked) => setFormData(prev => ({ ...prev, marketing: checked }))}
-                      className="mt-1"
-                    />
-                    <Label htmlFor="marketing" className="text-sm text-gray-600 leading-relaxed">
-                      Eu concordo em receber outras comunicações da enricorotter.com.br.
-                    </Label>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <Checkbox
-                      id="consentimento"
-                      name="consentimento"
-                      checked={formData.consentimento}
-                      onCheckedChange={(checked) => setFormData(prev => ({ ...prev, consentimento: checked }))}
-                      required
-                      className="mt-1"
-                    />
-                    <Label htmlFor="consentimento" className="text-sm text-gray-600 leading-relaxed">
-                      Eu concordo em permitir que a enricorotter.com.br armazene e processe meus dados pessoais. *
-                    </Label>
-                  </div>
-
-                  <p className="text-xs text-gray-500">
-                    A enricorotter.com.br tem o compromisso de proteger e respeitar sua privacidade. 
-                    Para obter mais informações, confira nossa Política de Privacidade.
-                  </p>
-                </div>
-
+          <Card className="shadow-xl border-0 bg-gradient-to-r from-blue-600 to-blue-700">
+            <CardContent className="p-8 text-center text-white">
+              <h3 className="text-2xl font-bold mb-4">Prefere Agendar uma Consulta?</h3>
+              <p className="text-blue-100 mb-6">
+                Agende uma conversa individual com o Dr. Enrico Rotter.<br/>
+                <strong>Primeira consulta sempre GRATUITA e sem compromisso.</strong>
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-4">
                 <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
-                  disabled={!formData.consentimento}
+                  className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3"
+                  onClick={openLeadsterChat}
+                >
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Agendar Consulta Online
+                </Button>
+                <Button 
+                  className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3"
+                  onClick={() => window.open('https://wa.me/5551981218676?text=Olá! Gostaria de agendar uma consulta presencial com o Dr. Enrico Rotter.', '_blank')}
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  Iniciar Conversa Agora
-                  <ArrowRight className="h-5 w-5 ml-2" />
+                  WhatsApp Direto
                 </Button>
-              </form>
+              </div>
+              
+              <div className="mt-6 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <p className="text-blue-100 text-sm">
+                  ✓ Atendimento em até 24h • ✓ Total sigilo • ✓ Sem custo inicial
+                </p>
+              </div>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Location Section with Google Maps */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Nosso Escritório
+            </h2>
+            <p className="text-xl text-gray-600">
+              Localizado em Porto Alegre, atendemos todo o Rio Grande do Sul
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="bg-gray-50 p-8 rounded-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-100 p-2 rounded-lg">
+                      <Phone className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Telefone/WhatsApp</p>
+                      <p className="text-gray-600">(51) 98121-8676</p>
+                      <p className="text-sm text-gray-500">Atendimento de segunda a sexta, 8h às 18h</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-100 p-2 rounded-lg">
+                      <Mail className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">E-mail</p>
+                      <p className="text-gray-600">contato@enricorotter.com.br</p>
+                      <p className="text-sm text-gray-500">Resposta em até 24 horas</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-100 p-2 rounded-lg">
+                      <MapPin className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Localização</p>
+                      <p className="text-gray-600">Porto Alegre, Rio Grande do Sul</p>
+                      <p className="text-sm text-gray-500">Atendimento presencial mediante agendamento</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-600">
+                  <p className="text-blue-800">
+                    <strong>Atendimento Online:</strong> Realizamos consultas por videochamada para todo o Brasil. 
+                    Agende sua consulta gratuita!
+                  </p>
+                </div>
+                
+                <div className="mt-6">
+                  <Button 
+                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 text-lg rounded-lg transition-all duration-300"
+                    onClick={openLeadsterChat}
+                  >
+                    <MessageCircle className="h-5 w-5 mr-2" />
+                    Conversar pelo WhatsApp
+                  </Button>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483689.5060226456!2d-51.24867693994142!3d-29.996099999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519827f49ac13cd%3A0x5a3e31f1ba6ab8c1!2sPorto%20Alegre%2C%20State%20of%20Rio%20Grande%20do%20Sul%2C%20Brazil!5e0!3m2!1sen!2sus!4v1647095834395!5m2!1sen!2sus"
+                  width="100%"
+                  height="384"
+                  style={{ border: 0, borderRadius: '8px' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização do escritório - Porto Alegre, RS"
+                ></iframe>
+              </div>
+              <p className="text-center text-gray-600 mt-4">
+                Porto Alegre - Rio Grande do Sul
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -671,6 +944,16 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Fixed WhatsApp Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Button
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 shadow-2xl transition-all duration-300 transform hover:scale-110"
+          onClick={() => window.open('https://wa.me/5551981218676?text=Olá! Vim do site e gostaria de conversar sobre meus direitos trabalhistas.', '_blank')}
+        >
+          <MessageCircle className="h-8 w-8" />
+        </Button>
+      </div>
     </div>
   )
 }
